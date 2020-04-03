@@ -1,0 +1,41 @@
+<div style ="text-align: center;">
+  <img
+  src="../assets/attachment_logo_lyst4516.png"
+  alt="LOGO"
+  height="100px"
+  width="100px"
+  class ="logo"
+  >
+  <h1 class="app-title">Lco TODO list</h1>
+
+  <div class="container">
+    Add a TODO...
+    <br>
+
+    <input 
+    type="text" 
+    class="input-text"
+    placeholder="Type a TODO"
+    [(ngModel)]="todoValue"
+    (keyup.enter)='addItem()'
+    />
+
+    <button class="add-btn" (click)="addItem()">Add TODO</button>
+
+  </div>
+  <div class="list">
+    <ul>
+      <li *ngFor="let item of list">
+        <input type="checkbox" name="isDone"
+        [(ngModel)]="item.isDone"
+         >
+        {{item.value}}
+        <button class="btn" (click)="deleteItem(item.id)">Delete</button>
+      </li>
+    </ul>
+
+
+
+  </div>
+
+</div>
